@@ -1,4 +1,9 @@
 #include <iostream>
+#include <string>
+#include <ctime>
+#include <stdlib.h>
+#include <windows.h>
+
 using namespace std;
 void border()
 {
@@ -16,6 +21,36 @@ void border()
 	cout << "              |" << "___|       |___|   |___________|   |__|     \\_____|    \\___________/" << endl;
 	cout << "              -----------------------------------------------------------------------" << endl;
 }
+
+
+
+void Timer()
+{
+
+	int minutes = 0;
+	int seconds = 0;
+	for (;;)
+	{
+
+		seconds++;
+
+
+		if (seconds == 60)
+		{
+
+
+
+			minutes++;
+			seconds = 0;
+		}
+
+
+		Sleep(1000);
+	}
+}
+
+
+
 int main()
 {
 	
