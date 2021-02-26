@@ -55,13 +55,17 @@ int main()
 {
 	
 	border();
-    size_t length, wordsCounter = 0, startIndex = 0;
+	int AllWords = 0;
+	int CorrectWords = 0;
+	int WrongWords = 0;
+	size_t length, wordsCounter = 0, startIndex = 0, n1 = 0, n4 = 0;
+	string answer;
     string words[1000];
 
 
 
     string YourText;
-    string Text1 = "An essay is, generally, a piece of writing that gives the author's own argument, but the definition is vague, overlapping with those of a letter, a paper, an article, a pamphlet, and a short story. Essays have traditionally been sub-classified as formal and informal.";
+    string Text1 = "Essays have traditionally been sub-classified as formal and informal.";
     length = Text1.size();
     string RandomText;
 
@@ -85,4 +89,59 @@ int main()
             }
         }
     }
+
+	for (size_t i = 0; i <= wordsCounter; i++)
+	{
+			for (size_t j = 0; j < wordsCounter; j++)
+			{
+				if (j != wordsCounter - 1)
+				{
+					cout << words[j] << " ";
+				}
+				else
+				{
+					cout << words[j];
+				}
+			}
+		cout << endl;
+		getline(cin, YourText);
+		
+
+		if (YourText == words[i])
+		{
+			AllWords++;
+			CorrectWords++;
+		}
+		else
+		{
+			if (i == wordsCounter)
+			{
+				cout << "Out of " << AllWords << " words, " << " you wrote " << CorrectWords << " words correct and " << WrongWords << " wrong words" << endl;
+				AllWords = 0;
+				CorrectWords = 0;
+				WrongWords = 0;
+				cout << "Do you want to play again?" << endl;
+				cout << "Yes or No." << endl;
+				getline(cin, answer);
+				if (answer == "Yes")
+				{
+					i = 0;
+					system("CLS");
+				}
+				else
+				{
+					break;
+				}
+			}
+			else
+			{
+				if (YourText != words[n1])
+				{
+					AllWords++;
+					WrongWords++;
+				}
+			}
+		}
+		n1++;
+	}
 }
