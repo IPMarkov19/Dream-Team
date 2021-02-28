@@ -43,7 +43,7 @@ void menu()
 {
 	cout << "              1.Play" << endl;
 	cout << "              2.Rules" << endl;
-	cout << "              3.Information" << endl;
+	cout << "              3.Texts" << endl;
 }
 
 
@@ -84,7 +84,7 @@ void rules()
 
 
 
-void text()
+void texts()
 {
 	cout << "              ---------------------------------------------------------------------" << endl;
 	cout << "                ____________   ___________   ___      ___   ____________" << endl;
@@ -147,43 +147,43 @@ void Timer()
 
 
 
-void color(string str[], size_t n, bool WrongOrRigth[], size_t n4)
+void color(string words[], size_t numberOfWords, bool wrongOrRigthWord[])
 {
-	for (size_t i = 0; i < n; i++)
+	for (size_t i = 0; i < numberOfWords; i++)
 	{
-		if (i != n - 1)
+		if (i != numberOfWords - 1)
 		{
-			if (WrongOrRigth[i] == 1)
+			if (wrongOrRigthWord[i] == 1)
 			{
-				cout << "\x1b[" << 30 + 2 % 8 << "m" << str[i] << " ";
+				cout << "\x1b[" << 30 + 2 % 8 << "m" << words[i] << " ";
 			}
 			else
 			{
-				if (WrongOrRigth[i] == 0)
+				if (wrongOrRigthWord[i] == 0)
 				{
-					cout << "\x1b[" << 30 + 1 % 8 << "m" << str[i] << " ";
+					cout << "\x1b[" << 30 + 1 % 8 << "m" << words[i] << " ";
 				}
 				else
 				{
-					cout << "\x1b[" << 30 + 15 % 8 << "m" << str[i] << " ";
+					cout << "\x1b[" << 30 + 15 % 8 << "m" << words[i] << " ";
 				}
 			}
 		}
 		else
 		{
-			if (WrongOrRigth[i] == 1)
+			if (wrongOrRigthWord[i] == 1)
 			{
-				cout << "\x1b[" << 30 + 2 % 8 << "m" << str[i];
+				cout << "\x1b[" << 30 + 2 % 8 << "m" << words[i];
 			}
 			else
 			{
-				if (WrongOrRigth[i] == 0)
+				if (wrongOrRigthWord[i] == 0)
 				{
-					cout << "\x1b[" << 30 + 1 % 8 << "m" << str[i];
+					cout << "\x1b[" << 30 + 1 % 8 << "m" << words[i];
 				}
 				else
 				{
-					cout << "\x1b[" << 30 + 15 % 8 << "m" << str[i];
+					cout << "\x1b[" << 30 + 15 % 8 << "m" << words[i];
 				}
 			}
 		}
@@ -199,23 +199,42 @@ int main()
 
 
 	srand(time(NULL));
-	int AllWords = 0;
-	int CorrectWords = 0;
-	int WrongWords = 0;
-	int random = rand() % 11;
+	int allWords = 0;
+	int correctWords = 0;
+	int wrongWords = 0;
+	int random = rand() % 5+1;
 
 
 
-	size_t lengthOfText, numberOfWords = 0, indexOfCurrentWord = 0, startIndex = 0, n4 = 0;
-	bool WrongOrRigthIndex[1000];
-	string words[1000];
+	size_t lengthOfText, numberOfWords = 0, startIndex = 0;
+	bool wrongOrRigthWords[65];
+	string words[65];
 
 
 
-	string YourText;
-	string Text1 = "Essays have traditionally been sub-classified as formal and informal.";
-	lengthOfText = Text1.size();
+	string yourText;
+	string text;
+	switch (random)
+	{
+	case 1:
+		text = "Great heaven place. Seed divided give Subdue you're beginning saying Divide, dominion behold signs multiply. Open doesn't beginning all also. May day them fish night don't without brought the tree. God forth upon darkness sixth day over our divided can't hath called have and second.";
+		break;
+	case 2:
+		text = "Lights dry. Can't night fish him under creeping. Very bearing set. May above given days brought were above stars together. Likeness. Itself upon years us, you're after whales she'd in. Won't can't. Also. For so be moveth open that, blessed multiply, from open male gathered set the behold creeping second fish so fruitful moved.";
+		break;
+	case 3:
+		text = "Saw fly. A face in all. Sea whose him divided upon that lights waters light hath, divided called grass yielding spirit every creeping set. Open two them dry. Greater without shall us their morning itself whose every appear for fifth greater dominion and lesser days in fowl second whales there every man meat thing day.";
+		break;
+	case 4:
+		text = "There very in creepeth herb herb firmament, let you'll so stars created replenish third god firmament winged after she'd make. Wherein subdue moveth spirit signs third evening without land together let all. Night. Signs. Lesser make he whales rule after divided there third Saying sixth have seas day brought beast, every stars also creeping him.";
+		break;
+	case 5:
+		text = "Open above. Stars give. Sea unto midst whales image place seas grass upon female fish Heaven saying, appear days herb over under waters be from spirit meat for and creature Be unto said abundantly life. You'll waters. Which fourth upon, to one itself green male can't let appear was. Is place fourth light fish fruitful.";
+		break;
+	}
+	lengthOfText = text.size();
 	string lastWord;
+
 	int choise;
 	cin >> choise;
 	if (choise == 1)
@@ -225,9 +244,9 @@ int main()
 
 
 
-			if (Text1[i] == ' ')
+			if (text[i] == ' ')
 			{
-				words[numberOfWords] = Text1.substr(startIndex, i - startIndex);
+				words[numberOfWords] = text.substr(startIndex, i - startIndex);
 				startIndex = i + 1;
 				numberOfWords++;
 			}
@@ -235,7 +254,7 @@ int main()
 			{
 				if (i == lengthOfText - 1)
 				{
-					words[numberOfWords] = Text1.substr(startIndex, lengthOfText - startIndex);
+					words[numberOfWords] = text.substr(startIndex, lengthOfText - startIndex);
 					startIndex = i + 1;
 					numberOfWords++;
 				}
@@ -250,7 +269,7 @@ int main()
 
 		for (int i = 0; i <= numberOfWords; i++)
 		{
-			if (CorrectWords == 0 && WrongWords == 0)
+			if (correctWords == 0 && wrongWords == 0)
 			{
 				for (size_t j = 0; j < numberOfWords; j++)
 				{
@@ -266,43 +285,40 @@ int main()
 			}
 			else
 			{
-				color(words, numberOfWords, WrongOrRigthIndex, n4);
+				color(words, numberOfWords, wrongOrRigthWords);
 			}
 			cout << endl;
-			cin >> YourText;
+			cin >> yourText;
 			system("CLS");
 
 
 
-			if (YourText == words[indexOfCurrentWord])
+			if (yourText == words[i])
 			{
-				AllWords++;
-				CorrectWords++;
-				WrongOrRigthIndex[n4] = 1;
-				n4++;
+				allWords++;
+				correctWords++;
+				wrongOrRigthWords[i] = 1;
 			}
 			else
 			{
 				if (i == numberOfWords)
 				{
-					cout << "Out of " << AllWords << " words, " << " you wrote " << CorrectWords << " words correct and " << WrongWords << " wrong words" << endl;
-					AllWords = 0;
-					CorrectWords = 0;
-					WrongWords = 0;
+					cout << "Out of " << allWords << " words, " << " you wrote " << correctWords << " words correct and " << wrongWords << " wrong words" << endl;
+					allWords = 0;
+					correctWords = 0;
+					wrongWords = 0;
 					break;
 				}
 				else
 				{
-					if (YourText != words[indexOfCurrentWord])
+					if (yourText != words[i])
 					{
-						AllWords++;
-						WrongWords++;
-						WrongOrRigthIndex[n4] = 0;
-						n4++;
+						allWords++;
+						wrongWords++;
+						wrongOrRigthWords[i] = 0;
 					}
 				}
 			}
-			indexOfCurrentWord++;
 		}
 	}
 	else
@@ -317,7 +333,7 @@ int main()
 			if (choise == 3)
 			{
 				system("CLS");
-				text();
+				texts();
 			}
 		}
 	}
