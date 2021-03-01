@@ -6,11 +6,11 @@
  Here you can have fun for free and try to be the fastest type racer.
  
 ## 📜 Rules
-You have to write word for word (after every word you write press ENTER);
-You have to go through all words to finish the game.
-The words which are colored in green are written correctly.
-The words which are colored in red are written incorrectly.
-At the end of the game you can see your result.   
+1. After you type the word that you need to type, you must hit the enter button.
+2. If the word that typed is wrong, the word on the printed sentence will turn red, otherwise will turn green.
+3. Enter is not considered as word
+4. If there is a sign next to a word, you must type that word with the sign next to it.
+5. When you type your last word, you must type it with the sign next to it.
 
 ## 👪 Participants
 
@@ -25,7 +25,15 @@ At the end of the game you can see your result.
 Go to [This link](https://github.com/IPMarkov19/Dream-Team/archive/master.zip) and download the last release.
 After that open the folder Type racer. Then open TypeRacer.sln. Then run the console and you are ready to go.
 
-
+## How to play
++ When you enter the main menu you can choose one of three options (Play, Rules, Texts)
+![General UI](https://i.imgur.com/CJpJemY.png)
++ Play starts the game and you can play. The game ends when you have entered the amount of words needed to continue
+![General UI](https://i.imgur.com/2g0km7Q.png)
++ Rules shows you what the rules of the game are
+![General UI](https://i.imgur.com/0BGVttq.png)
++ Texts shows you the bank of the texts we have used and you can easily memorisz them.
+![General UI](https://i.imgur.com/rs6q7yC.png)
 ## 📝 Documentation
 
 # Usage 
