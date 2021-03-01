@@ -108,30 +108,6 @@ void texts()//Function that shows all avaliable texts
 }
 
 
-
-void Timer()//Function that counts time
-{
-
-	int minutes = 0;
-	int seconds = 0;
-	for (;;)
-	{
-
-		seconds++;
-
-		if (seconds == 60)
-		{
-			minutes++;
-			seconds = 0;
-		}
-
-
-		Sleep(1000);//Stop the program for 1 second
-	}
-}
-
-
-
 void color(string words[], size_t numberOfWords, bool wrongOrRigthWord[])//Function that colors words from the text
 {
 	for (size_t i = 0; i < numberOfWords; i++)
@@ -253,7 +229,7 @@ int main()
 
 
 
-		for (int i = 0; i <= numberOfWords; i++)
+		for (int i = 0; i <= numberOfWords; i++)//Print the text
 		{
 			if (correctWords == 0 && wrongWords == 0)
 			{
