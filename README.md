@@ -17,7 +17,7 @@
 
 + Ivaylo Markov - [IPMarkov19](https://github.com/IPMarkov19) - Scrum Trainer
 + Dimitar Ivanov - [DSIvanov19](https://github.com/DSIvanov19) - Q&A Engineer  
-+ Dimitar Mechkov - [MMMechkov19](https://github.com/MMMechkov19) - Code Checker   
++ Martin Mechkov - [MMMechkov19](https://github.com/MMMechkov19) - Code Checker   
 + Hristiqn Kimrqnov - [HHKimryanov19](https://github.com/HHKimryanov19) -  Front End developer
 + Georgi Hrisimov - [GKHrisimov19](https://github.com/HHKimryanov19) -  Back End developer
 
