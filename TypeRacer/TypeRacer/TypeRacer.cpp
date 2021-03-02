@@ -1,13 +1,12 @@
-#include <iostream>
+#include <iostream> //Libraries
 #include <string>
 #include <ctime>
 #include <stdlib.h>
 #include <windows.h>
 
-
-
 using namespace std;
-void border()
+
+void border()//Function for printing the starting menu
 {
 	cout << "              ---------------------------------------------------------------------" << endl;
 	cout << "               ____       ____     ___________     ____        __     __         __" << endl;
@@ -39,7 +38,7 @@ void border()
 
 
 
-void menu()
+void menu()//Function that prints the options for the menu
 {
 	cout << "              1.Play" << endl;
 	cout << "              2.Rules" << endl;
@@ -50,7 +49,7 @@ void menu()
 
 
 
-void rules()
+void rules()//Function that prints the rules
 {
 	cout << "              ---------------------------------------------------------------------" << endl;
 	cout << "               _______     __       __     __            ___________      _________" << endl;
@@ -84,7 +83,7 @@ void rules()
 
 
 
-void texts()
+void texts()//Function that shows all avaliable texts
 {
 	cout << "              ---------------------------------------------------------------------" << endl;
 	cout << "                ____________   ___________   ___      ___   ____________" << endl;
@@ -109,45 +108,7 @@ void texts()
 }
 
 
-
-void Timer()
-{
-
-
-
-	int minutes = 0;
-	int seconds = 0;
-	for (;;)
-	{
-
-
-
-		seconds++;
-
-
-
-
-		if (seconds == 60)
-		{
-
-
-
-
-
-			minutes++;
-			seconds = 0;
-		}
-
-
-
-
-		Sleep(1000);
-	}
-}
-
-
-
-void color(string words[], size_t numberOfWords, bool wrongOrRigthWord[])
+void color(string words[], size_t numberOfWords, bool wrongOrRigthWord[])//Function that colors words from the text
 {
 	for (size_t i = 0; i < numberOfWords; i++)
 	{
@@ -193,28 +154,26 @@ void color(string words[], size_t numberOfWords, bool wrongOrRigthWord[])
 
 int main()
 {
-	border();
-	menu();
-
-
+	border();//Call a function
+	menu();//Call a function
 
 	srand(time(NULL));
+
+	//Initializing variables
 	int allWords = 0;
 	int correctWords = 0;
 	int wrongWords = 0;
 	int random = rand() % 5+1;
 
-
-
 	size_t lengthOfText, numberOfWords = 0, startIndex = 0;
 	bool wrongOrRigthWords[65];
 	string words[65];
 
-
-
 	string yourText;
 	string text;
-	switch (random)
+	//Initializing variables
+
+	switch (random)//Getting random text
 	{
 	case 1:
 		text = "Great heaven place. Seed divided give Subdue you're beginning saying Divide, dominion behold signs multiply. Open doesn't beginning all also. May day them fish night don't without brought the tree. God forth upon darkness sixth day over our divided can't hath called have and second.";
@@ -231,20 +190,23 @@ int main()
 	case 5:
 		text = "Open above. Stars give. Sea unto midst whales image place seas grass upon female fish Heaven saying, appear days herb over under waters be from spirit meat for and creature Be unto said abundantly life. You'll waters. Which fourth upon, to one itself green male can't let appear was. Is place fourth light fish fruitful.";
 		break;
-	}
+	}//Getting random text
+
+
 	lengthOfText = text.size();
 	string lastWord;
 
 	int choise;
 	cin >> choise;
-	if (choise == 1)
+
+	if (choise == 1)//Start tha game
 	{
 		for (size_t i = 0; i < lengthOfText; i++)
 		{
 
 
 
-			if (text[i] == ' ')
+			if (text[i] == ' ')//Dividing the string into several substrings
 			{
 				words[numberOfWords] = text.substr(startIndex, i - startIndex);
 				startIndex = i + 1;
@@ -263,11 +225,11 @@ int main()
 
 
 
-		system("CLS");
+		system("CLS");//Clear screen
 
 
 
-		for (int i = 0; i <= numberOfWords; i++)
+		for (int i = 0; i <= numberOfWords; i++)//Print the text
 		{
 			if (correctWords == 0 && wrongWords == 0)
 			{
@@ -289,11 +251,12 @@ int main()
 			}
 			cout << endl;
 			cin >> yourText;
+
 			system("CLS");
 
 
 
-			if (yourText == words[i])
+			if (yourText == words[i])//Counts your correct words
 			{
 				allWords++;
 				correctWords++;
@@ -301,7 +264,7 @@ int main()
 			}
 			else
 			{
-				if (i == numberOfWords)
+				if (i == numberOfWords)//Outputs your result
 				{
 					cout << "Out of " << allWords << " words, " << " you wrote " << correctWords << " words correct and " << wrongWords << " wrong words" << endl;
 					allWords = 0;
@@ -311,7 +274,7 @@ int main()
 				}
 				else
 				{
-					if (yourText != words[i])
+					if (yourText != words[i])//Counts your wrong words
 					{
 						allWords++;
 						wrongWords++;
@@ -323,17 +286,17 @@ int main()
 	}
 	else
 	{
-		if (choise == 2)
+		if (choise == 2)//Show rules
 		{
 			system("CLS");
-			rules();
+			rules();//Call a function
 		}
 		else
 		{
-			if (choise == 3)
+			if (choise == 3)//Show all texts
 			{
 				system("CLS");
-				texts();
+				texts();//Call a function
 			}
 		}
 	}
