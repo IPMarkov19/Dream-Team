@@ -23,7 +23,7 @@
 
 ## ⚙️ How to install
 Go to [This link](https://github.com/IPMarkov19/Dream-Team/archive/master.zip) and download the last release.
-After that open the folder Type racer. Then open TypeRacer.sln. Then run the console and you are ready to go.
+Unzip and open the folder Open the folder TypeRacer. Then open TypeRacer.sln. Then run the console and you are ready to go.
 
 ## How to play
 + When you enter the main menu you can choose one of three options (Play, Rules, Texts)
@@ -35,6 +35,9 @@ After that open the folder Type racer. Then open TypeRacer.sln. Then run the con
 + Texts shows you the bank of the texts we have used and you can easily memorisz them.
 ![General UI](https://i.imgur.com/rs6q7yC.png)
 ## 📝 Documentation
-
++ For Documentation click this link [This link](https://github.com/IPMarkov19/Dream-Team/raw/master/Documentation%20%26%20Presentation/Documentation.docx)
++ For Presentation click [This link](https://github.com/IPMarkov19/Dream-Team/raw/master/Documentation%20%26%20Presentation/Presentation.pptx)
++ For the table with functions [This link](https://github.com/IPMarkov19/Dream-Team/raw/master/Documentation%20%26%20Presentation/Table%20with%20functions.xlsx)
 # Usage 
-#### TBD
++ Feel free to modify and use the code but if you are going to upload it somewhere give us credit. 
+Dream Team(2021-2021)©
